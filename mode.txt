@@ -1,0 +1,138 @@
+﻿XDUthesis为已有的类，包含.cls（类的定义）、.def（格式定义）、.cfg（内容初始化，包含论文题目、作者信息在这里修改）
+
+SZY_XDU.toc 为目录，会根据内容自动更新
+
+latex的关键字都是用反斜杠 \ 标识
+
+\qquad 作用为英文空两格
+
+%注释快捷键：ctrl + shift + alt + →
+%删除注释快捷键：ctrl + shift + alt + ←
+
+大小写字母快速切换：ctrl + shift + alt + ↓
+
+%两个 && 似乎为固定用法，空一定间距
+%symbollist 固定为两列，abbreviationlist 为三列
+
+直接使用 ~ 表示空格
+
+符号的写法：    $ "字符串" $     
+常常用              ~$  $~    的方法，在字符前后加上空格
+
+m_b表示b为m的下角标
+m^b标识b为m的上角标
+
+\emph{字符串}  将字符串强调标识
+\textbf{ }           文字加粗
+\mathbf{}          公式符号加粗
+\cdots               三点省略号 ...（居中） \vdots 斜着的省略号
+\geqslant          大于等于
+\alpha               阿尔法
+\times	        乘号
+\par                  换行
+
+表格的使用与段内标注（见附录）
+使用：
+\begin{table}[!htbp]
+内容与格式设定
+\label{tab:label_name}
+\end{table}
+% 每个table最后都有  \label{tab:label_name} , 用于段内  \ref{tab:label_name} 来引用（可以直接超链接转到）
+
+图片的使用与引用
+使用：
+\begin{figure}[!hbt]
+  \centering                                                                                      %居中格式
+  \includegraphics[width=15cm]{./Figures/chap1/DVBMOD.eps}       %图片大小、相对位置
+  \caption{DVB 系列标准对比}                                                            %图例
+\label{Fig:DVBMOD}					        %标签（用于\ref）
+\end{figure}
+% 每个table最后都有  \label{fig:label_name} , 用于段内  \ref{fig:label_name} 来引用（可以直接超链接转到）
+
+[!hbt]  此命令是让图片在编译时随代码动态移动，根据大小找合适的位置放置，
+[h/b/t]  分别表示位于代码的   h(此处)，t(上方)，b(下方)
+
+a或b使用 正斜杠 / 来分开 eg： CRC/DCRC
+
+图片引用 ~\ref{Fig:PCfunction}~
+
+页面自动换行设置 ctrl+W
+
+\begin{align*}得到的公式没有编号
+
+如此得到的多行公式只有一个标号
+\begin{align} 或 \begin{equation}
+\begin{split}
+多行公式
+\end{split}
+\end{align} 或 \end{equation}
+
+\sum 为求和符号，_、^ 可为其添加上下限，当为段内公式时上下限在符号右侧
+\sum \limits 可以限制上下限在求和符号的上下方而不是右侧
+\limits 表示上下标
+
+对数符号 \ln \log \log_2
+指数符号  \exp()
+
+文中引用公式需要在公式外套括号 eg： 式（2-1）
+
+\mathbb    打出空心的字母
+
+\textit{}  斜体
+
+引用章节的方式：
+	在章节chaper 或小节section后添加\label{}，再引用即可
+
+figure环境下图标题换行（可实现插图引用中换行）-----
+在文字间插入     \protect\\
+
+\cleardoublepage            在 .cls 中添加  ，用于补全偶数页空白页
+
+
+
+
+-------------------------------------------------------form WL
+
+\emph{}  斜体
+\textbf{}  加粗
+$\mathcal{I}=\{1,2,\ldots,K\}$     \字符   $公式$    \ldots(...)  
+
+https://blog.csdn.net/zaishuiyifangxym/article/details/88327257      late插入mathtype公式
+
+\emph{}文本加粗  \mathbf{}数学公式加粗
+
+latex 不止一个操作时用花括号括起来
+
+一段话里偶尔用到公式或数学符号就用“$内容$”
+一段话后，想介绍一个公式，不想要编号，但为了强调或醒目，想独立成行，可以用“$$内容$$”
+如果想正二八经地列出公式，带编号，那就用equation吧
+\begin{equation}
+内容
+\end{equation}
+
+参考文献：cite  引用
+                upcite 右上角引用
+
+\\  用于公式换行
+
+不斜体：输入 \rm [start, end)。
+
+加粗：输入 \bf [start, end) 。
+
+斜体：输入 \it [start, end) 。
+
+
+公式环境下的括号得是\left(，\right)。
+
+
+使用Latex 编辑文章时，会遇到在字母上面加各种符号的问题，小结一下
+加^号 输入\hat  或 \widehat
+加横线 输入 \overline
+加波浪线 输入 \widetilde
+加一个点 \dot{要加点的字母}加两个点\ddot{要加点的字母}
+
+（）和\left( \right)的区别
+\left( \right)：有时候分式太宽，这种形式可以全部包裹
+（）：普通的一行间括号
+
+
